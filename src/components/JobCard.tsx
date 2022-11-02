@@ -4,7 +4,7 @@ function JobCard({src, title, name, date }:{src:string, title:string, name:strin
     return (
         <>
         <h2>{title}</h2>
-        <p className="department-name">Department name • {name}</p>
+        <p className="text-3xl font-bold underline text-red-600">Department name • {name}</p>
         <p></p>
         <PostedDay date={date}/>
         </>
