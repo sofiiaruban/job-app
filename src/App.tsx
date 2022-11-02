@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {HashRouter as Router} from "react-router-dom";
+import {Routes, Route } from 'react-router-dom';
+import Jobs from './pages/Jobs';
+import JobDetailed from './pages/JobDetailed';
+import {createContext, useMemo, useState} from "react";
+import { SaveToListTypes } from './interfaces/Interfaces';
 
-function App() {
+export const SaveToListContext = createContext<SaveToListTypes>({
+  isMarked: false,
+  setIsMarked: () =>  {},
+})
+
+
+function  App() {
+
+  const [isMarked, setIsMarked] = useState<boolean>(false);
+
+  const SaveToListMemo = useMemo(
+    () => ({isMarked, setIsMarked}),
+    [isMarked]
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+   <Router>
+    <SaveToListContext.Provider value={SaveToListMemo}>
+      <Routes>
+        <Route path="/" element={<Jobs />}></Route>
+        <Route path="/jobdetailed" element={<JobDetailed />} />
+      </Routes>
+    </SaveToListContext.Provider>
+    </Router>
   );
 }
 
