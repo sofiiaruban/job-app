@@ -1,11 +1,12 @@
 import moment from 'moment';
 
-function PostedDay({date}:{date:string}) {
+function PostedDay({date, className}:{date:string,
+className?: string}) {
 
     const dateTimeAgo = moment(new Date(date)).fromNow();
     
     return (
-        <div className="posted-day">Posted {dateTimeAgo}</div>
+        <div className={className}>Posted {dateTimeAgo}</div>
         
     )
 }

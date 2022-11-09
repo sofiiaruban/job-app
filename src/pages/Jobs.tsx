@@ -1,55 +1,41 @@
 
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import JobCard from "../components/JobCard";
+import Pagination from "../components/Pagination";
+import SaveToList from "../components/SaveToList";
 import { JobDataTypes } from "../interfaces/Interfaces";
 
-function Jobs() {
-    const url: string ="https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu";
-    const [jobData, setJobData] = useState<JobDataTypes>([]);
-    const [loading, setLoading] = useState<boolean>(false);
-
-    useEffect(()=> {
-        async function fetchData() {
-            setLoading(true);
-            try {
-                const response= await fetch(url);
-                const results = await response.json();
-                setJobData(results);
-
-            } catch (error) {
-                console.log(error);
-            }
-            setLoading(false);
-        }
-        fetchData();
-        console.log(Array.isArray(jobData));
-        console.log(typeof jobData)
-    }, [])
-
+function Jobs({loading, jobData}:{loading: boolean, jobData: JobDataTypes | any}) {
     
-    return (
-        <div>
-            {loading && (
-                <div>Loading ...</div>
-            )}
+     return (
+        <div className="mx-auto">
             {!loading && (
-                <ul className="jobs"> { 
-                    jobData?.map((
+                <>
+                    <ul className="jobs"> {jobData?.map((
                         job: {
-                            pictures: string[]; 
-                            title: string; 
-                            name: string; 
-                            createdAt: string; 
-                        }
-                            ) => (
-                            <JobCard 
-                            key={job.name} src={job.pictures[0]} title={job.title} name={job.name} date={job.createdAt}/>
-                            ))
-                }
-            {/*JSON.stringify(jobData)*/}
-                </ul>
-            )}
+                            pictures: string[];
+                            title: string;
+                            name: string;
+                            createdAt: string;
+                            id: string;
+                        }, index: number
+                    ) => (
+                        <li key={job.id} className="px-4 py-6 mb-4 rounded-lg bg-white drop-shadow-md reletive">
+                            <Link to="/jobdetailed">
+                                <JobCard src={job.pictures[0]} title={job.title} name={job.name} date={job.createdAt} index={index} />
+                            </Link>   
+                            <SaveToList className="absolute top-6 right-4" index={index}/> 
+                        </li>
+
+                    ))}
+                    </ul>
+                    
+                    <Pagination />
+                 </>
+            )} 
+            
         </div>
     )
 

@@ -1,8 +1,6 @@
 import React, { Dispatch } from "react";
 
-//export interface JobDataObjTypes {
-//   
-//}
+
 export interface JobDataTypes {
     [index: number]: {
      id : string ,
@@ -14,7 +12,7 @@ export interface JobDataTypes {
      address :  string,
      benefits : Array<string>,
      location : {
-       lat : number,
+       lat :  number,
        long : number
     },
      pictures : Array<string>,
@@ -27,4 +25,9 @@ export interface JobDataTypes {
 export interface SaveToListTypes {
    isMarked: boolean;
    setIsMarked: Dispatch<React.SetStateAction<boolean>>,
+}
+export interface JobIndexTypes {
+   jobIndex: number, 
+   setJobIndex: Dispatch<React.SetStateAction<number>>
+   
 }
