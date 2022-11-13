@@ -22,10 +22,7 @@ export interface JobDataTypes {
      employment_type : Array<string>
   },
 }
-export interface SaveToListTypes {
-   isMarked: boolean;
-   setIsMarked: Dispatch<React.SetStateAction<boolean>>,
-}
+
 export interface JobIndexTypes {
    jobIndex: number, 
    setJobIndex: Dispatch<React.SetStateAction<number>>

@@ -1,45 +1,31 @@
-import bookmark from "../assets/bookmark.svg";
-import { useContext, useState} from "react";
-import { JobIndexContext, SaveToListContext } from "../App";
+import { useState} from "react";
 import Bookmark from "../assets/Bookmark";
-import { IndexInfo } from "typescript";
-//import { MarkListTypes } from "../interfaces/Interfaces";
 
-
-function SaveToList({index, className} : {index?: number,
-className?: string}) {
-  const {isMarked, setIsMarked} = useContext(SaveToListContext)
-  // const [isMarked, setIsMarked] = useState<boolean>(false);
-   //const {jobIndex} = useContext(JobIndexContext);
-  //const [markedList, setMarkedList] = useState<Array<number>>([]);
-//
-  //const storedMarkedList = JSON.parse(localStorage.getItem("markedList") || ""); 
-  // console.log(storedMarkedList);
-  //function updateList() {
-  // setMarkedList((currentList) => [...currentList, index]);
-  //}
-
-   function clickHandler() {
-      
-    setIsMarked((isMarked) ? false : true);
-   
-   //setMarkedList((currentList) => [...currentList, index]);
-   //updateList()
-   //
-   //console.log(index);
-   //console.log("click")
-   //console.log(markedList);
-   //localStorage.setItem("storedMarkedList", JSON.stringify(markedList));
-
-   }
+function SaveToList({index, className} : {index?: number | undefined,
+                    className?: string}) {
   
-//(isMarked) ? "fill-grey-fill" : "" }
+  const [storageItem, setStorageItem] = useState(() => JSON.parse(localStorage.getItem("storedMarkedList") || "[]"));
+
+  const isFavourited = storageItem.includes(index);
+ // localStorage.clear();
+
+  function clickHandler() {
+      if (!isFavourited) {
+      const newStorageItem = [...storageItem, index]
+      setStorageItem(newStorageItem);
+      localStorage.setItem("storedMarkedList", JSON.stringify(newStorageItem));
+      } else {
+
+      const newStorageItem = storageItem.filter((savedIndex: number | undefined) => savedIndex !== index);
+      setStorageItem(newStorageItem);
+      localStorage.setItem("storedMarkedList", JSON.stringify(newStorageItem));
+    }
+  }
+  
  return (
-      <Bookmark className={`${(isMarked) ? "fill-grey-fill" : "" } ${className}`} onClick={clickHandler}/>
+      <Bookmark className={`${(isFavourited) ? "fill-grey-fill" : "" } ${className}`} onClick={clickHandler}/>
  )
 }
 export default SaveToList;
 
-function updateList() {
-   throw new Error("Function not implemented.");
-}
+

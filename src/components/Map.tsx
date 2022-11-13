@@ -6,6 +6,7 @@ import marker from "../assets/marker.svg";
 function Map({locationLat, locationLong} : {locationLat: number, locationLong: number}) {
   
     const apiKey: string  = "AIzaSyC7R6RKefPNdncgoPQT_EvUJDuWKWEw7tI";
+    
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: apiKey,
       });
@@ -18,7 +19,7 @@ function Map({locationLat, locationLong} : {locationLat: number, locationLong: n
         disableDefaultUI: true,
       }
       return (
-        <GoogleMap zoom={10} center={center} mapContainerClassName="map-container" options={options} >
+        <GoogleMap zoom={30} center={center} mapContainerClassName="map-container" options={options} >
           <MarkerF  position={center} icon={marker} />
         </GoogleMap>
       );

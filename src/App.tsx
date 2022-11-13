@@ -5,12 +5,9 @@ import {Routes, Route } from 'react-router-dom';
 import Jobs from './pages/Jobs';
 import JobDetailed from './pages/JobDetailed';
 import {createContext, useMemo, useEffect} from "react";
-import { JobDataTypes, JobIndexTypes, SaveToListTypes } from './interfaces/Interfaces';
+import { JobDataTypes, JobIndexTypes} from './interfaces/Interfaces';
 
-export const SaveToListContext = createContext<SaveToListTypes>({
-  isMarked: false,
-  setIsMarked: () =>  {},
-})
+
 export const JobIndexContext = createContext<JobIndexTypes>({
   jobIndex: 0,
   setJobIndex: () =>  {},
@@ -18,12 +15,6 @@ export const JobIndexContext = createContext<JobIndexTypes>({
 
 function  App() {
 
-  const [isMarked, setIsMarked] = useState<boolean> (false);
-
-  const SaveToListMemo = useMemo(
-    () => ({isMarked, setIsMarked}),
-    [isMarked]
-  )
   const [jobIndex, setJobIndex] = useState<number>(0);
 
   const JobIndexMemo = useMemo(
@@ -55,9 +46,8 @@ function  App() {
   if (loading) return <div>Loading ...</div>
    
   return (
-    <div className='bg-light-blue-app-bg p-10 flex  font-normal'>
+    <div className='font-normal'>
       <Router>
-        <SaveToListContext.Provider value={SaveToListMemo}>
         <JobIndexContext.Provider value={JobIndexMemo} >
           <Routes>
             <Route path="/" element={<Jobs loading={false} jobData={jobData} />}></Route>
@@ -66,10 +56,9 @@ function  App() {
                 date={jobData[jobIndex]?.createdAt} salary={jobData[jobIndex]?.salary}
                 description={jobData[jobIndex]?.description} benefits={jobData[jobIndex]?.benefits}
                 employmentType={jobData[jobIndex]?.employment_type} location={jobData[jobIndex]?.location} 
-                phone={jobData[jobIndex]?.phone} adress={jobData[jobIndex]?.address}/>} />
+                phone={jobData[jobIndex]?.phone} adress={jobData[jobIndex]?.address} index={jobIndex}/>} />
           </Routes>
           </JobIndexContext.Provider >
-        </SaveToListContext.Provider>
         </Router>
     </div>
   );
