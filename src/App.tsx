@@ -44,19 +44,21 @@ function  App() {
   }, [])
 
   if (loading) return <div>Loading ...</div>
-   
+
+  const job = jobData[jobIndex];
+
   return (
     <div className='font-normal'>
       <Router>
         <JobIndexContext.Provider value={JobIndexMemo} >
           <Routes>
             <Route path="/" element={<Jobs loading={false} jobData={jobData} />}></Route>
-            <Route path="/jobdetailed" element={<JobDetailed pictures={jobData[jobIndex]?.pictures}
-                title={jobData[jobIndex]?.title} name={jobData[jobIndex]?.name} email={jobData[jobIndex]?.email}
-                date={jobData[jobIndex]?.createdAt} salary={jobData[jobIndex]?.salary}
-                description={jobData[jobIndex]?.description} benefits={jobData[jobIndex]?.benefits}
-                employmentType={jobData[jobIndex]?.employment_type} location={jobData[jobIndex]?.location} 
-                phone={jobData[jobIndex]?.phone} adress={jobData[jobIndex]?.address} index={jobIndex}/>} />
+            <Route path="/jobdetailed" element={<JobDetailed pictures={job?.pictures}
+                title={job?.title} name={job?.name} email={job?.email}
+                date={job?.createdAt} salary={job?.salary}
+                description={job?.description} benefits={job?.benefits}
+                employmentType={job?.employment_type} location={job?.location} 
+                phone={job?.phone} adress={job?.address} index={jobIndex}/>} />
           </Routes>
           </JobIndexContext.Provider >
         </Router>

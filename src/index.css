@@ -22,10 +22,3 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     height: 218px;
     border-radius: 0 0 8px 8px;
   }
-aside {
-  border-radius: 8px 8px 0 0;
-  width: 402px;
-  height: 218px;
-  color: #E7EAF0;
-  background-color: #2A3047;
-}

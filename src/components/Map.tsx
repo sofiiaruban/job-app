@@ -3,7 +3,7 @@ import { GoogleMap, useLoadScript, MarkerF, Marker } from "@react-google-maps/ap
 import { mapStyles } from "./MapStyles";
 import marker from "../assets/marker.svg";
 
-function Map({locationLat, locationLong} : {locationLat: number, locationLong: number}) {
+function Map({locationLat, locationLong, classes} : {locationLat: number, locationLong: number, classes: string}) {
   
     const apiKey: string  = "AIzaSyC7R6RKefPNdncgoPQT_EvUJDuWKWEw7tI";
     
@@ -19,7 +19,7 @@ function Map({locationLat, locationLong} : {locationLat: number, locationLong: n
         disableDefaultUI: true,
       }
       return (
-        <GoogleMap zoom={30} center={center} mapContainerClassName="map-container" options={options} >
+        <GoogleMap zoom={10} center={center} mapContainerClassName={classes} options={options} >
           <MarkerF  position={center} icon={marker} />
         </GoogleMap>
       );
