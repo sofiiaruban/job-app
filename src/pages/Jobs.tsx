@@ -38,7 +38,7 @@ function Jobs({loading, jobData}:{loading: boolean, jobData: JobDataTypes | any}
         
     }
      return (
-        <div className="mx-auto bg-light-blue-app-bg py-10 max-xl:px-16 max-lg:px-12 max-md:px-8  max-md:px-4 px-20 ">
+        <div className="mx-auto bg-light-blue-app-bg py-10 max-xl:px-16 max-lg:px-12 max-md:px-8 max-md:px-4 px-20 ">
             {!loading && (
                 <>
                     <ul className="mb-10"> {currentJobs.map((

@@ -39,8 +39,8 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
 
     return (
         <>
-            <div className="flex flex-row max-md:flex-col pl-40 max-xl:pl-20 max-lg:pl-16 max-md:px-10 max-sm:pl-5 py-5 text-dark-blue-text bg-white ">
-                <div className="flex flex-col w-3/6 mr-10 max-md:w-full">
+            <div className="flex flex-row max-lg:flex-col px-40  max-xl:px-20 max-lg:px-16 max-md:px-10 max-sm:px-5 max-[405px]:pr-0 py-5 text-dark-blue-text bg-white ">
+                <div className="flex flex-col w-3/6 mr-10  max-xl:w-full">
                     <header className="flex justify-between md:border-b-2 md:border-bc-grey pb-1 max-md:flex-col">
                         <h1 className="font-bold text-2xl max-md:mb-2 max-md:border-b-2 max-md:border-bc-grey">Job Details</h1>
                         <div className="flex flex-row ">
@@ -49,23 +49,23 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
                                 <span className="pt-1 pr-3">Save to my list</span>
                             </div>
                             <div className="flex flex-row">
-                                <img src={shareIcon} className="w-10 h-10" alt="share  icon" />
+                                <img src={shareIcon} className="w-9 h-9" alt="share icon" />
                                 <span className="pt-1">Share</span>
                             </div>
                         </div>
                     </header>
-                    <main className="max-md:relative">
-                        <ApplyBtn className="max-md:hidden" children="APPLY NOW"/>
-                        <div className="flex mb-2 max-md:flex-col">
-                            <h2 className="text-2xl font-bold pr-2 max-w-md xl:pr-0 max-sm:pr-0 max-lg:w-full" >{jobTitle}</h2>
-                            <div className="">
-                                <div className="pl-10 max-xl:pl-5 xl:pl-2 pr-4 max-lg:flex max-lg:items-end max-lg:flex-col">
+                    <main>
+                        <ApplyBtn classes="hidden md:block" children="APPLY NOW"/>
+                        <div className="max-[785px]:relative ">
+                            <div className="flex mb-2 max-[785px]:flex-col">
+                                <h2 className="text-2xl font-bold pr-6 xl:max-w-md max-[780px]:w-full max-lg:mr-20 max-[820px]:mr-12  max-[800px]:mr-8 max-[790px]:mr-6 max-[780px]:mr-4 max-lg:pr-1 max-sm:pr-0" >{jobTitle}</h2>
+                                <div className="max-xl:pl-10  max-[715px]:pl-5  max-[685px]:pl-3 max-[685px]:pl-0 pr-4  max-[715px]:pr-2 max-lg:flex max-lg:items-start  max-[785px]:items-end max-lg:flex-col">
                                     <div className="text-xl font-bold order-last">€ {salary}</div>
                                     <div>Brutto, per year</div>
                                 </div> 
-                            </div> 
+                            </div>
+                            <PostedDay className="text-text-grey-date mb-2 max-[785px]:absolute max-[785px]:top-56 max-[760px]:top-20 max-[760px]:top-20 max-[560px]:top-28 max-[440px]:mb-0" date={date} />
                         </div>
-                        <PostedDay className="text-text-grey-date mb-2 max-md:absolute max-md:top-40 max-md:pt-10" date={date} />
                         <p className="mb-5">{jobOverview}.</p>
                         <h3 className="font-bold text-xl mb-2">Responsopilities:</h3>
                         <ul className="mb-5">{jobResponsopilities.map((text, index) => {
@@ -89,8 +89,8 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
                         <div className="flex">{pictures.map((pictures, index) => <img key={index} src={pictures} className="w-96 max-h-36 rounded mb-10 mr-3 last:mr-0" />)}</div>
                     </main>
                 </div>
-                <h3 className="max-md:font-bold max-md:text-xl max-md:pb-1  max-md:border-b-2 hidden max-md:border-bc-grey max-md:block mb-5">Contacts</h3>
-                <aside className="ml-10 rounded-t-lg w-[400px]  h-[218px] max-xl:ml-8 max-lg:ml-6 max-md:ml-4 max-md:ml-2 text-fc-white bg-blue-map max-md:mx-auto mb-10">
+                <h3 className="max-lg:font-bold max-lg:text-xl max-lg:pb-1  max-lg:border-b-2 hidden max-lg:border-bc-grey max-lg:block mb-5">Contacts</h3>
+                <aside className="ml-8 max-xl:ml-6 max-lg:ml-4  rounded-t-lg w-[400px] max-[440px]:w-[380px] h-[218px] text-fc-white bg-blue-map max-md:mx-auto mb-10">
                         <div className="p-10  bg-no-repeat" style={{backgroundImage: `url(${mapCircle})`}}>
                         <h2 className="font-bold font-xl mb-3">{name}</h2>
                         <address className="flex flex-col">
@@ -102,7 +102,7 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
                             <a className="mb-1 not-italic" href={`mailto:${email}`}>{email}</a>
                         </address>
                     </div>
-                    <Map classes="w-[400px] h-[218px] rounded-b-lg"locationLat={location.lat} locationLong={location.long} />
+                    <Map classes="w-[400px] h-[218px]  max-[440px]:w-[380px] rounded-b-lg" locationLat={location.lat} locationLong={location.long} />
                 </aside>
             </div>
             <ReturnBtn />
