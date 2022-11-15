@@ -55,7 +55,7 @@ function Jobs({loading, jobData}:{loading: boolean, jobData: JobDataTypes | any}
                                 <JobCard src={job.pictures[0]} title={job.title} name={job.name} date={job.createdAt} index={(jobOffset > 1 ) ? (index+(jobOffset-1)*jobsPerPage): index} />
                             </Link>   
                             <SaveToList className="absolute top-6 right-4 max-sm:hidden" index={(jobOffset > 1 ) ? (index+(jobOffset-1)*jobsPerPage) : index}/> 
-                            <StarRating className="flex absolute top-16 right-52 max-sm:top-5 max-sm:left-24 "/>
+                            <StarRating className="flex absolute top-16 right-52 max-sm:top-5 max-sm:left-20 "/>
                         </li>
                     ))}
                     </ul>

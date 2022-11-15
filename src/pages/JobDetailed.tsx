@@ -39,8 +39,8 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
 
     return (
         <>
-            <div className="flex flex-row max-lg:flex-col px-40  max-xl:px-20 max-lg:px-16 max-md:px-10 max-sm:px-5 max-[405px]:pr-0 py-5 text-dark-blue-text bg-white ">
-                <div className="flex flex-col w-3/6 mr-10  max-xl:w-full">
+            <div className="flex flex-row max-lg:flex-col px-40  max-[1440px]:px-28 max-[1385px]:px-24 max-xl:px-16 max-lg:px-12 max-md:px-8 max-sm:px-5 max-[405px]:pr-0 py-5 text-dark-blue-text bg-white ">
+                <div className="flex flex-col w-4/6 mr-10  max-[1375px]:mr-6 max-xl:w-full">
                     <header className="flex justify-between md:border-b-2 md:border-bc-grey pb-1 max-md:flex-col">
                         <h1 className="font-bold text-2xl max-md:mb-2 max-md:border-b-2 max-md:border-bc-grey">Job Details</h1>
                         <div className="flex flex-row ">
@@ -58,13 +58,13 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
                         <ApplyBtn classes="hidden md:block" children="APPLY NOW"/>
                         <div className="max-[785px]:relative ">
                             <div className="flex mb-2 max-[785px]:flex-col">
-                                <h2 className="text-2xl font-bold pr-6 xl:max-w-md max-[780px]:w-full max-lg:mr-20 max-[820px]:mr-12  max-[800px]:mr-8 max-[790px]:mr-6 max-[780px]:mr-4 max-lg:pr-1 max-sm:pr-0" >{jobTitle}</h2>
-                                <div className="max-xl:pl-10  max-[715px]:pl-5  max-[685px]:pl-3 max-[685px]:pl-0 pr-4  max-[715px]:pr-2 max-lg:flex max-lg:items-start  max-[785px]:items-end max-lg:flex-col">
-                                    <div className="text-xl font-bold order-last">€ {salary}</div>
+                                <h2 className="text-2xl font-bold w-3/5 max-[1050px]:text-xl max[1120px]:w-1/4 max[1100px]:w-1/6 max-[780px]:w-full xl:mr-5 max-lg:mr-20 max-[1030px]:mr-0 max-[820px]:mr-12  max-[800px]:mr-8 max-[790px]:mr-6 max-[780px]:mr-4 pr-6 max-[1070px]:pr-2 max-lg:pr-1 max-sm:pr-0 max-[785px]:pb-16" >{jobTitle}</h2>
+                                <div className="max-[1280px]:pl-2 max-[1125px]:px-1 max-[1080px]:pl-1 max-[715px]:pl-5  w-2/5 max-[685px]:pl-3 max-[685px]:pl-0 flex flex-col justify-center text-center  max-[715px]:pr-2 max-lg:flex max-lg:items-start  max-lg:flex-col max-[785px]:absolute max-[785px]:top-16  max-[560px]:top-24 max-[785px]:right-0">
+                                    <div className="text-xl max-[1050px]:text-lg font-bold order-last">€ {salary}</div>
                                     <div>Brutto, per year</div>
                                 </div> 
                             </div>
-                            <PostedDay className="text-text-grey-date mb-2 max-[785px]:absolute max-[785px]:top-56 max-[760px]:top-20 max-[760px]:top-20 max-[560px]:top-28 max-[440px]:mb-0" date={date} />
+                            <PostedDay className="text-text-grey-date mb-2 max-[785px]:absolute max-[785px]:top-20 max-[760px]:top-20 max-[760px]:top-20 max-[560px]:top-28 max-[440px]:mb-0" date={date} />
                         </div>
                         <p className="mb-5">{jobOverview}.</p>
                         <h3 className="font-bold text-xl mb-2">Responsopilities:</h3>
@@ -90,7 +90,7 @@ function JobDetailed({pictures, title, name, date, salary, description, benefits
                     </main>
                 </div>
                 <h3 className="max-lg:font-bold max-lg:text-xl max-lg:pb-1  max-lg:border-b-2 hidden max-lg:border-bc-grey max-lg:block mb-5">Contacts</h3>
-                <aside className="ml-8 max-xl:ml-6 max-lg:ml-4  rounded-t-lg w-[400px] max-[440px]:w-[380px] h-[218px] text-fc-white bg-blue-map max-md:mx-auto mb-10">
+                <aside className="ml-8 max-[1385px]:ml-6 max-xl:ml-4  max-[1025px]:mx-auto rounded-t-lg w-[400px] max-[440px]:w-[380px] h-[218px] text-fc-white bg-blue-map max-md:mx-auto mb-10">
                         <div className="p-10  bg-no-repeat" style={{backgroundImage: `url(${mapCircle})`}}>
                         <h2 className="font-bold font-xl mb-3">{name}</h2>
                         <address className="flex flex-col">
