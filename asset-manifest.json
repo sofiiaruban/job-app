@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/job-app/static/css/main.b146f275.css",
+    "main.js": "/job-app/static/js/main.7a11fc3a.js",
+    "static/js/787.80d7bff3.chunk.js": "/job-app/static/js/787.80d7bff3.chunk.js",
+    "static/media/star-filled.svg": "/job-app/static/media/star-filled.940f154bce8c4fba195c32ab44b144f2.svg",
+    "static/media/star-empty.svg": "/job-app/static/media/star-empty.be2ba4d3f9640ac467b5c268f3ff8d9a.svg",
+    "static/media/arrow-right.svg": "/job-app/static/media/arrow-right.8c3ac9b43da985170a20d1865a684874.svg",
+    "static/media/arrow-left.svg": "/job-app/static/media/arrow-left.0c7b4f1ac94745a61b50f4c97e60e157.svg",
+    "static/media/share-icon.svg": "/job-app/static/media/share-icon.76c0fbc60d15628be051fadde6920d2f.svg",
+    "index.html": "/job-app/index.html",
+    "static/media/small-marker.svg": "/job-app/static/media/small-marker.71f330ef48d9a3e3db89bdf8a76bf7db.svg",
+    "static/media/arrow-left-blue.svg": "/job-app/static/media/arrow-left-blue.81b0f26cb6486aa14408fc44c9104536.svg",
+    "static/media/marker.svg": "/job-app/static/media/marker.0307b2ed693c0ae210e7442ed15975a6.svg",
+    "static/media/grey-marker.svg": "/job-app/static/media/grey-marker.1c093ca173a538132f1ce31ab6296061.svg",
+    "static/media/map-circle.svg": "/job-app/static/media/map-circle.9c9206dd3c1c0d802c1f617ff249c37c.svg",
+    "main.b146f275.css.map": "/job-app/static/css/main.b146f275.css.map",
+    "main.7a11fc3a.js.map": "/job-app/static/js/main.7a11fc3a.js.map",
+    "787.80d7bff3.chunk.js.map": "/job-app/static/js/787.80d7bff3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b146f275.css",
+    "static/js/main.7a11fc3a.js"
+  ]
+}
